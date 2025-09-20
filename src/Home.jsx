@@ -95,7 +95,7 @@ function Home() {
                   <img
                     src={value.image}
                     alt={`${value.title} game`}
-                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 "
+                    className="w-full h-full object-contain rounded-xl transition-transform duration-500 "
                   />
                 </div>
                 <div className="p-5">
