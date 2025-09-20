@@ -35,9 +35,7 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>
-          Free Online Games - Play Now | Board Games, Puzzles & More
-        </title>
+       
         <meta
           name="description"
           content="Play free online games including board games, puzzles, strategy games and more. No downloads required. Fun for all ages!"
@@ -46,7 +44,6 @@ function Home() {
           name="keywords"
           content="free online games, board games, puzzle games, strategy games, family games, no download games"
         />
-        <script type="application/ld+json">{JSON.stringify(gameSchema)}</script>
       </Helmet>
 
       <div className="mt-[60px] w-full pb-8 bg-gradient-to-b from-blue-50 to-indigo-50 min-h-screen">
@@ -92,13 +89,13 @@ function Home() {
             {gamesType.map((value, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-xl shadow-lg  hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className="overflow-hidden h-48">
+                <div className=" h-48">
                   <img
                     src={value.image}
                     alt={`${value.title} game`}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 "
                   />
                 </div>
                 <div className="p-5">

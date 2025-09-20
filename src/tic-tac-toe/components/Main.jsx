@@ -301,7 +301,7 @@ export default function TicTacToeGame() {
 
       <div className=" bubbleBackground relative overflow-hidden ">
         <div className="bg-indigo-900/90 p-4 min-h-[90vh] ">
-          <div className=" m-auto mt-3 sm:mt-2 rounded-xl z-10 max-w-[340px]  relative ">
+          <div className=" m-auto mt-8 sm:mt-2 rounded-xl z-10 max-w-[366px]  relative ">
             {/* Header */}
             <div className=" ">
               <button
