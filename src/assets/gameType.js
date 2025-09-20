@@ -7,5 +7,7 @@ export const gamesType = [
         description:"Play the classic Tic Tac Toe game online. Challenge your friends or practice against the computer.",
         url:"tic-tac-toe"
     },
+
+    
      
 ]

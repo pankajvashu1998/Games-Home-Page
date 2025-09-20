@@ -134,7 +134,7 @@ export default function AboutPage() {
       </Helmet>
       <div className="relative min-h-screen text-gray-900 overflow-hidden">
         <div className="relative z-10">
-          <header className="mt-[60px] bg-blue-400 text-white py-12 text-center p-4">
+          <header className="mt-[60px] bg-blue-600 text-white py-12 text-center p-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               About Us
             </h1>
@@ -263,8 +263,8 @@ export default function AboutPage() {
               </h2>
               <div className="grid gap-4 sm:grid-cols-3">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-20 h-20 shadow border border-gray-200 bg-blue-200 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-3">
+                  <div key={index} className="text-center my-4">
+                    <div className="w-40 h-40 shadow border border-gray-200 bg-blue-200 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-3">
                       <img
                         src={member.image}
                         alt=""

@@ -19,7 +19,7 @@ export default function ServicesPage() {
       </Helmet>
 
       {/* ✅ Page Header */}
-      <header className="bg-blue-400 text-white py-16 text-center ">
+      <header className="bg-blue-600 text-white py-16 text-center ">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
           Our Services
         </h1>

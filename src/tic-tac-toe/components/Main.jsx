@@ -297,61 +297,23 @@ export default function TicTacToeGame() {
   // Game Board
   return (
     <>
-      <Helmet>
-        <title>Tic Tac Toe Online - Free Multiplayer Game</title>
-        <meta
-          name="description"
-          content="Play free Tic Tac Toe game online challenge your friends or AI,.  Enjoy classic X and O strategy fun in single-player, multiplayer mode and AI mode. No download required!"
-        />
-        <meta
-          name="keywords"
-          content="zenith games, zenith webzone games, tic tac toe board, tic tac toe 2 player, tic tac toe multiplayer, tic tac toe 2 player online, tic tac toe online, play tic tac toe, free tic tac toe game, tic tac toe multiplayer, tic tac toe strategy game, play x and o game"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://game.zenithwebzone.com/" />
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Play Tic Tac Toe Online - Free Multiplayer Game"
-        />
-        <meta
-          property="og:description"
-          content="Challenge your friends or AI, play solo with Tic Tac Toe online. Fun, simple, and addictive game of Xs and Os."
-        />
-        <meta
-          property="og:url"
-          content="https://game.zenithwebzone.com/tic-tac-toe"
-        />
-        <meta property="og:site_name" content="YourWebsite" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Play Tic Tac Toe Online - Free Multiplayer Game"
-        />
-        <meta
-          name="twitter:description"
-          content="Play free Tic Tac Toe game online. Classic X and O fun with single-player and multiplayer modes."
-        />
-      </Helmet>
+     
 
       <div className=" bubbleBackground relative overflow-hidden ">
-        <div className="bg-indigo-900/90 p-4 min-h-[90vh] flex justify-center items-center">
-          <div className="w-[90vw] m-auto 1 rounded-xl z-10  relative ">
+        <div className="bg-indigo-900/90 p-4 min-h-[90vh] ">
+          <div className=" m-auto mt-3 sm:mt-2 rounded-xl z-10 max-w-[340px]  relative ">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
+            <div className=" ">
               <button
                 onClick={backToMenu}
-                className="cursor-pointer absolute text-5xl rounded-full -left-4 top-0 p-3 text-purple-500  font-extrabold"
+                className="cursor-pointer absolute text-4xl rounded-full -left-4 top-0 p-3 text-purple-500  font-extrabold"
               >
                 <GrCaretPrevious />
               </button>
 
               <button
                 onClick={() => setSpeaker(false)}
-                className="cursor-pointer absolute text-5xl rounded-full -right-3 top-0 p-3 text-purple-500  font-extrabold "
+                className="cursor-pointer absolute text-4xl rounded-full -right-3 top-0 p-3 text-purple-500  font-extrabold "
               >
                 <IoSettingsOutline />
               </button>
@@ -361,7 +323,7 @@ export default function TicTacToeGame() {
 
             {/* Computer mode----------- */}
             {gameMode === "computer" ? (
-              <div className="text-center mb-6 flex justify-center items-center gap-2">
+              <div className="text-center mb-6 flex justify-center items-center gap-6">
                 <div
                   className={`flex justify-between items-center flex-col gap-1 ${
                     isXNext ? "opacity-100 " : "opacity-15"
@@ -371,7 +333,7 @@ export default function TicTacToeGame() {
                   <img
                     src="user.png"
                     alt=""
-                    className={`h-9 w-9 text-white ${isXNext && "bounce2x"}`}
+                    className={`h-8 w-8 text-white ${isXNext && "bounce2x"}`}
                   />
                   <span className="text-[11px]   text-blue-400 font-semibold">
                     PLAYER
@@ -387,7 +349,7 @@ export default function TicTacToeGame() {
                 >
                   <img
                     src="Meta-ai-logo (1).png"
-                    className={`h-12 w-12 ml-2  rounded-full ${
+                    className={`h-10 w-10 ml-2  rounded-full ${
                       isXNext ? "" : "bounce2x"
                     }`}
                   />
@@ -446,12 +408,12 @@ export default function TicTacToeGame() {
                   >
                     <span>
                       {cell === "X" ? (
-                        <IoClose className="h-18 w-18  animate__animated animate__bounceIn text-white" />
+                        <IoClose className="h-24 w-20  animate__animated animate__bounceIn text-white" />
                       ) : (
                         ""
                       )}
                       {cell === "O" ? (
-                        <FaRegCircle className="h-12 w-12  bg-blue-500/30 rounded-full borderShadow animate__animated animate__bounceIn text-pink-500" />
+                        <FaRegCircle className="h-16 w-16  bg-blue-500/30 rounded-full borderShadow animate__animated animate__bounceIn text-pink-500" />
                       ) : (
                         ""
                       )}

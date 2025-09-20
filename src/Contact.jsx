@@ -68,7 +68,7 @@ const ContactPage = () => {
       </Helmet>
 
       {/* ✅ Hero Section */}
-      <section className="relative text-center py-16 bg-blue-400 text-white">
+      <section className="relative text-center py-16 bg-blue-600 text-white">
        
         <div className="relative max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-4xl font-bold mb-4">Get In Touch With Us</h1>

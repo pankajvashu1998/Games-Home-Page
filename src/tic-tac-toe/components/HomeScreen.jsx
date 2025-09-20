@@ -3,9 +3,9 @@ import { FaRegCircle } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import About from "./About";
 import AdSenseAd from "../../Adsense";
+import { Helmet } from 'react-helmet'
 
 const HomeScreen = ({ props }) => {
-
   const {
     winLine,
     handleUserVsComputer,
@@ -18,19 +18,55 @@ const HomeScreen = ({ props }) => {
   } = props;
   return (
     <>
-      <div className=" bubbleBackground min-h-[90vh]  flex justify-center flex-col items-center  w-full relative overflow-hidden">
+      <Helmet>
+        <title>Tic Tac Toe Online - Free Multiplayer Game</title>
+        <meta
+          name="description"
+          content="Play free Tic Tac Toe game online challenge your friends or AI,.  Enjoy classic X and O strategy fun in single-player, multiplayer mode and AI mode. No download required!"
+        />
+        <meta
+          name="keywords"
+          content="zenith games, zenith webzone games, tic tac toe board, tic tac toe 2 player, tic tac toe multiplayer, tic tac toe 2 player online, tic tac toe online, play tic tac toe, free tic tac toe game, tic tac toe multiplayer, tic tac toe strategy game, play x and o game"
+        />
+
+        <link rel="canonical" href="https://game.zenithwebzone.com/" />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Play Tic Tac Toe Online - Free Multiplayer Game"
+        />
+        <meta
+          property="og:description"
+          content="Challenge your friends or AI, play solo with Tic Tac Toe online. Fun, simple, and addictive game of Xs and Os."
+        />
+        <meta
+          property="og:url"
+          content="https://game.zenithwebzone.com/tic-tac-toe"
+        />
+        <meta property="og:site_name" content="YourWebsite" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Play Tic Tac Toe Online - Free Multiplayer Game"
+        />
+        <meta
+          name="twitter:description"
+          content="Play free Tic Tac Toe game online. Classic X and O fun with single-player and multiplayer modes."
+        />
+      </Helmet>
+      <div className=" bubbleBackground min-h-[90vh]  flex    w-full relative overflow-hidden">
         {/* Middle - Game Image */}
-        <div className="flex-1 flex items-center justify-evenly flex-col sm:flex-row gap-7  px-4 z-10 bg-indigo-900/90  w-full">
-          {/* ads by google */}
-          <div></div>
-          <div className=" px-6 md:max-w-[300px] w-full   relative ">
+        <div className=" bg-indigo-900/90  w-full p-6">
+          <div className=" px-6 mx-auto w-full max-w-[24rem]  relative ">
             <div className="relative">
               <h1 className="text-center text-4xl  font-bold text-white">
-               Tic Tac Toe
-               
+                Tic Tac Toe
               </h1>
               <p className="text-sm text-center text-white pb-4 ">
-               Think Ahead, Win Faster!
+                Think Ahead, Win Faster!
               </p>
             </div>
             <div className="grid grid-cols-3 gap-2 mb-3 border-4 border-blue-300 rounded-xl relative bg-gradient-to-br from-purple-900 via-indigo-900 to-black">
@@ -105,16 +141,13 @@ const HomeScreen = ({ props }) => {
               </button>
             </div>
           </div>
-
-          {/* ads by google */}
-          <div></div>
         </div>
 
         {/* Difficulty Modal */}
         {showDifficultyModal && (
           <div className="fixed w-full   bubbleBackground   z-50">
-            <div className="w-full min-h-[90vh] p-4 bg-indigo-900/90 flex items-center  justify-center">
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-2xl py-10  max-w-[25rem] w-full p-6 relative animate__animated animate__bounceIn">
+            <div className="w-full min-h-[90vh] p-4 bg-indigo-900/90 ">
+              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl mx-auto mt-13 sm:mt-4 shadow-2xl py-10  max-w-[25rem] w-full  p-6 relative animate__animated animate__bounceIn">
                 <button
                   onClick={() => setShowDifficultyModal(false)}
                   className="absolute top-4 right-4 p-2 hover:bg-purple-100 rounded-full transition-colors text-2xl text-purple-700"
@@ -160,9 +193,8 @@ const HomeScreen = ({ props }) => {
                             {diff === "Easy"
                               ? "Computer makes random moves"
                               : diff === "Medium"
-                              ?"Computer plays strategically sometimes"
-                              : "Computer never loses"
-                            }
+                              ? "Computer plays strategically sometimes"
+                              : "Computer never loses"}
                           </p>
                         </div>
                       </div>
@@ -201,18 +233,17 @@ const HomeScreen = ({ props }) => {
                   onClick={() => handleDifficultyConfirm(difficulty)}
                   className="w-full py-3 text-lg font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl shadow-lg transition-all transform hover:scale-[1.01] cursor-pointer"
                 >
-                 Start Game
+                  Start Game
                 </button>
               </div>
             </div>
           </div>
         )}
-       
       </div>
       <div className="max-w-7xl mx-auto">
-          <AdSenseAd height={250}/>
+        <AdSenseAd height={250} />
       </div>
-      <About/>
+      <About />
     </>
   );
 };
