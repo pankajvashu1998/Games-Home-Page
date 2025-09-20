@@ -57,6 +57,20 @@ export default function TicTacToeGame() {
   const [isDraw, setIsDraw] = useState(false);
   const [showWinModal, setShowWinModal] = useState(false);
 
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (showDifficultyModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showDifficultyModal]);
+
   const fireConfetti = () => {
     confetti({
       particleCount: 200,
@@ -324,20 +338,20 @@ export default function TicTacToeGame() {
       </Helmet>
 
       <div className=" bubbleBackground relative overflow-hidden ">
-        <div className="bg-indigo-900/90 p-4 min-h-[97vh] flex justify-center items-center">
-          <div className="w-sm m-auto p-4 rounded-xl z-10  relative border border-white/40 bg-indigo-900">
+        <div className="bg-indigo-900/90 p-4 min-h-[90vh] flex justify-center items-center">
+          <div className="w-[90vw] m-auto 1 rounded-xl z-10  relative ">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 ">
+            <div className="flex items-center justify-between mb-6">
               <button
                 onClick={backToMenu}
-                className="cursor-pointer absolute text-4xl rounded-full left-0 top-0 p-3 text-purple-500  font-extrabold"
+                className="cursor-pointer absolute text-5xl rounded-full -left-4 top-0 p-3 text-purple-500  font-extrabold"
               >
                 <GrCaretPrevious />
               </button>
 
               <button
                 onClick={() => setSpeaker(false)}
-                className="cursor-pointer absolute text-4xl rounded-full right-0 top-0 p-3 text-purple-500  font-extrabold "
+                className="cursor-pointer absolute text-5xl rounded-full -right-3 top-0 p-3 text-purple-500  font-extrabold "
               >
                 <IoSettingsOutline />
               </button>
@@ -357,13 +371,15 @@ export default function TicTacToeGame() {
                   <img
                     src="user.png"
                     alt=""
-                    className={`h-6 w-6 text-white ${isXNext && "bounce2x"}`}
+                    className={`h-9 w-9 text-white ${isXNext && "bounce2x"}`}
                   />
                   <span className="text-[11px]   text-blue-400 font-semibold">
                     PLAYER
                   </span>
                 </div>
-                <span className="text-blue-400 font-bold mb-5">VS</span>
+                <span className="text-blue-400 text-2xl font-bold mb-5">
+                  VS
+                </span>
                 <div
                   className={`flex justify-between items-center flex-col  ${
                     isXNext ? "opacity-15" : "opacity-100 "
@@ -371,7 +387,7 @@ export default function TicTacToeGame() {
                 >
                   <img
                     src="Meta-ai-logo (1).png"
-                    className={`h-8 w-8 ml-2  rounded-full ${
+                    className={`h-12 w-12 ml-2  rounded-full ${
                       isXNext ? "" : "bounce2x"
                     }`}
                   />
@@ -413,7 +429,7 @@ export default function TicTacToeGame() {
             )}
 
             {/* Game Board */}
-            <div className="  shadow-2xl shadow-white/40 mx-auto  md:max-w-[300px]  bg-gradient-to-br from-purple-900 via-indigo-900 to-black relative animate__animated animate__bounceIn circleShadow overflow-hidden">
+            <div className="    mx-auto  md:max-w-[340px]  bg-gradient-to-br from-purple-900 via-indigo-900 to-black relative animate__animated animate__bounceIn circleShadow overflow-hidden">
               <div className="grid grid-cols-3  relative border-2 rounded  border-white/40 circleShadow ">
                 {winningLine && <WinLine props={{ winningLine }} />}
 
@@ -447,9 +463,9 @@ export default function TicTacToeGame() {
             <div className="w-full flex justify-center items-center pt-5">
               <button
                 onClick={resetGame}
-                className="px-6 py-2 border-2 border-blue-400 rounded-sm"
+                className="px-6 py-4 border-2 border-blue-400 rounded-sm w-full max-w-[100px] flex justify-center items-center"
               >
-                <GrPowerReset className="text-2xl font-bold text-white cursor-pointer" />
+                <GrPowerReset className="text-3xl font-bold text-white cursor-pointer" />
               </button>
             </div>
 

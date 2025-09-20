@@ -17,14 +17,14 @@ const HomeScreen = ({ props }) => {
   } = props;
   return (
     <>
-      <div className=" bubbleBackground h-screen  flex justify-center flex-col items-center  w-full relative overflow-hidden">
+      <div className=" bubbleBackground min-h-[90vh]  flex justify-center flex-col items-center  w-full relative overflow-hidden">
         {/* Middle - Game Image */}
         <div className="flex-1 flex items-center justify-evenly flex-col sm:flex-row gap-7  px-4 z-10 bg-indigo-900/90  w-full">
           {/* ads by google */}
           <div></div>
           <div className=" px-6 md:max-w-[300px] w-full   relative ">
             <div className="relative">
-              <h1 className="text-center md:text-4xl text-3xl font-bold text-white">
+              <h1 className="text-center text-4xl  font-bold text-white">
                Tic Tac Toe
                
               </h1>
@@ -83,7 +83,7 @@ const HomeScreen = ({ props }) => {
             <div className="w-full flex justify-center items-center flex-col gap-3">
               <button
                 onClick={handleUserVsComputer}
-                className="bg-indigo-800 text-white border-2 border-blue-400 p-3 rounded-xl cursor-pointer hover:bg-indigo-900 duration-300"
+                className="bg-indigo-800 text-white border-2 border-blue-400 p-3 rounded-xl cursor-pointer hover:bg-indigo-900 duration-300 w-[12rem]"
               >
                 <div className="flex justify-center items-center gap-4">
                   <img src="user.png" alt="User" className="w-6 h-6" />
@@ -94,7 +94,7 @@ const HomeScreen = ({ props }) => {
               </button>
               <button
                 onClick={handleUserVsUser}
-                className="bg-indigo-800 text-white border-2 border-blue-400 p-3 rounded-xl cursor-pointer hover:bg-indigo-900 duration-300"
+                className="bg-indigo-800 text-white border-2 border-blue-400 p-3 rounded-xl cursor-pointer hover:bg-indigo-900 duration-300 w-[12rem]"
               >
                 <div className="flex justify-center items-center gap-4">
                   <img src="user.png" alt="User" className="w-6 h-6" />
@@ -112,8 +112,8 @@ const HomeScreen = ({ props }) => {
         {/* Difficulty Modal */}
         {showDifficultyModal && (
           <div className="fixed w-full   bubbleBackground   z-50">
-            <div className="w-full min-h-screen p-4 bg-indigo-900/90 flex items-center  justify-center">
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-2xl h-[470px]  max-w-sm w-full p-6 relative animate__animated animate__bounceIn">
+            <div className="w-full min-h-[90vh] p-4 bg-indigo-900/90 flex items-center  justify-center">
+              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-2xl py-10  max-w-[25rem] w-full p-6 relative animate__animated animate__bounceIn">
                 <button
                   onClick={() => setShowDifficultyModal(false)}
                   className="absolute top-4 right-4 p-2 hover:bg-purple-100 rounded-full transition-colors text-2xl text-purple-700"
