@@ -3,6 +3,7 @@ import { FaRegCircle } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import About from "./About";
 import AdSenseAd from "../../Adsense";
+
 const HomeScreen = ({ props }) => {
 
   const {

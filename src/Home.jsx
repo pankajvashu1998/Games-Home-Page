@@ -15,10 +15,10 @@ function Home() {
     <>
       <div className="mt-[60px] w-full pb-8">
         <div className="text-center mb-8 w-full p-4  mx-auto bg-blue-200 py-8 flex justify-center items-center flex-col">
-          <h1 className="text-3xl sm:text-5xl  font-bold text-red-600">
+          <h1 className="text-2xl sm:text-5xl  font-bold text-red-600">
             All Your Favorite Games in One Place
           </h1>
-          <h1 className="text-xl font-semibold text-blue-700">
+          <h1 className=" font-semibold text-blue-700">
             Play classic board games online or offline. Fun, simple, and
             engaging for all ages — from strategy to family favorites.
           </h1>
@@ -26,7 +26,7 @@ function Home() {
         <div className="w-full max-w-7xl  mx-auto ">
           <div className="flex justify-center items-center flex-wrap gap-6">
             {gamesType.map((value, index) => (
-              <div key={index} className="shadow-md rounded-2xl max-w-[270px]">
+              <div key={index} className="shadow-md rounded-2xl max-w-[280px]">
                 <div className="overflow-hidden h-[150px] rounded-tl-2xl rounded-tr-2xl">
                   <img
                     src={value.image}
