@@ -91,11 +91,11 @@ function Home() {
                 key={index}
                 className="bg-white rounded-xl shadow-lg  hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className=" h-48">
+                <div className="">
                   <img
                     src={value.image}
                     alt={`${value.title} game`}
-                    className="w-full h-full object-contain rounded-xl transition-transform duration-500 "
+                    className="w-full h-full object-contain rounded-tl-xl rounded-tr-xl transition-transform duration-500 "
                   />
                 </div>
                 <div className="p-5">
