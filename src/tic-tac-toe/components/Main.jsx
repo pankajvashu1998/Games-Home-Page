@@ -1,5 +1,5 @@
 import "animate.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaRegCircle } from "react-icons/fa";
 import { GrCaretPrevious } from "react-icons/gr";
@@ -11,6 +11,7 @@ import WinModal from "./WinModal";
 import Setting from "./Setting";
 import WinLine from "./WinLine";
 import { Helmet } from "react-helmet";
+import UserName from "./UserName";
 
 export default function TicTacToeGame() {
   const [speaker, setSpeaker] = useState(true);
@@ -56,10 +57,14 @@ export default function TicTacToeGame() {
   const [winningLine, setWinningLine] = useState(null);
   const [isDraw, setIsDraw] = useState(false);
   const [showWinModal, setShowWinModal] = useState(false);
+  const [nameModal, setNameModal] = useState(false);
+  const [player1Name, setPlayer1name] = useState("");
+  const [player2Name, setPlayer2name] = useState("");
+  
 
   // Prevent background scroll when modal is open
   useEffect(() => {
-    if (showDifficultyModal) {
+    if (showDifficultyModal || nameModal) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -69,7 +74,7 @@ export default function TicTacToeGame() {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [showDifficultyModal]);
+  }, [showDifficultyModal, nameModal ]);
 
   const fireConfetti = () => {
     confetti({
@@ -240,11 +245,13 @@ export default function TicTacToeGame() {
     setWinningLine(null);
     setIsDraw(false);
     setShowWinModal(false);
+    setNameModal(false);
   };
 
   const backToMenu = () => {
     setGameMode(null);
     resetGame();
+    setNameModal(false);
   };
 
   const handleUserVsComputer = () => {
@@ -253,6 +260,7 @@ export default function TicTacToeGame() {
 
   const handleUserVsUser = () => {
     setGameMode("user");
+    setNameModal(true)
   };
 
   const handleDifficultyConfirm = (selectedDifficulty) => {
@@ -297,8 +305,6 @@ export default function TicTacToeGame() {
   // Game Board
   return (
     <>
-     
-
       <div className=" bubbleBackground relative overflow-hidden ">
         <div className="bg-indigo-900/90 p-4 min-h-[90vh] ">
           <div className=" m-auto mt-8 sm:mt-2 rounded-xl z-10 max-w-[366px]  relative ">
@@ -369,7 +375,7 @@ export default function TicTacToeGame() {
                     className={`h-10 w-10 text-white ${isXNext && "bounce2x"}`}
                   />
                   <span className="text-[11px] relative bottom-1 text-blue-400 font-semibold">
-                    PLAYER 1
+                   {player1Name}
                   </span>
                 </div>
                 <span className="text-blue-400 font-bold mb-5">VS</span>
@@ -384,7 +390,7 @@ export default function TicTacToeGame() {
                     }`}
                   />
                   <span className="text-[12px] ml-2 text-blue-400 font-semibold">
-                    PLAYER 2
+                   {player2Name}
                   </span>
                 </div>
               </div>
@@ -394,7 +400,7 @@ export default function TicTacToeGame() {
             <div className="    mx-auto  md:max-w-[340px]  bg-gradient-to-br from-purple-900 via-indigo-900 to-black relative animate__animated animate__bounceIn circleShadow overflow-hidden">
               <div className="grid grid-cols-3  relative border-2 rounded  border-white/40 circleShadow ">
                 {winningLine && <WinLine props={{ winningLine }} />}
-
+               
                 {board.map((cell, index) => (
                   <button
                     key={index}
@@ -439,6 +445,8 @@ export default function TicTacToeGame() {
                 winner,
                 resetGame,
                 backToMenu,
+                player1Name,
+                player2Name
               }}
             />
 
@@ -449,6 +457,16 @@ export default function TicTacToeGame() {
             >
               <Setting props={{ setSpeaker, setOnSpeaker, onSpeaker }} />
             </div>
+
+            {/* Player names modal */}
+            {nameModal && (
+              <UserName
+                setNameModal={setNameModal}
+                setPlayer2name={setPlayer2name}
+                setPlayer1name={setPlayer1name}
+                backToMenu={backToMenu}
+              />
+            )}
           </div>
         </div>
       </div>

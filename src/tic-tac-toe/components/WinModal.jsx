@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RiLoopLeftFill } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
+
 const WinModal = ({ props }) => {
-  const { showWinModal, gameMode, isDraw, winner, resetGame, backToMenu } =
-    props;
+  const {
+    showWinModal,
+    gameMode,
+    isDraw,
+    winner,
+    resetGame,
+    backToMenu,
+    player1Name,
+    player2Name,
+  } = props;
+
+  // ✅ Voice announce function
+  const speak = (message) => {
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(message);
+      utterance.lang = "hi-IN"; // 🔥 Hindi voice
+      utterance.rate = 1; // speed
+      utterance.pitch = 1; // pitch
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  useEffect(() => {
+    if (showWinModal) {
+      setTimeout(() => {
+        let message = "";
+        if (isDraw) {
+          message = "मैच ड्रॉ हो गया! बहुत बढ़िया खेला!";
+        } else if (gameMode === "computer") {
+          message = winner === "X" ? "आप जीत गए!" : "आप हार गए!";
+        } else {
+          message =
+            winner === "X"
+              ? `${player1Name} जीत गया!`
+              : `${player2Name} जीत गया!`;
+        }
+        speak(message);
+      }, 1800);
+    }
+  }, [showWinModal, isDraw, winner, gameMode, player1Name, player2Name]);
+
   return (
     <div>
       {showWinModal && (
@@ -13,20 +53,16 @@ const WinModal = ({ props }) => {
               {gameMode === "computer" ? (
                 <div className="mb-6">
                   {isDraw ? (
-                    <div className="w-28 h-28 mx-auto  rounded-full flex items-center justify-center">
-                      <img
-                        src="handshake.png"
-                        alt=""
-                        className="animate__animated animate__fadeInUp"
-                      />
+                    <div className="w-28 h-28 mx-auto rounded-full flex items-center justify-center">
+                      <img src="handshake.png" alt="Draw" />
                     </div>
                   ) : winner === "X" ? (
-                    <div className="w-24 h-24 mx-auto  rounded-full flex items-center justify-center text-4xl">
-                      <img src="trophy.png" alt="" />
+                    <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center">
+                      <img src="trophy.png" alt="Win" />
                     </div>
                   ) : (
-                    <div className="w-24 h-24 mx-auto  rounded-full flex items-center justify-center text-4xl">
-                      <img src="sad-face.png" alt="" />
+                    <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center">
+                      <img src="sad-face.png" alt="Lose" />
                     </div>
                   )}
 
@@ -35,7 +71,6 @@ const WinModal = ({ props }) => {
                       ? "Draw!"
                       : `${winner === "X" ? "You win!" : "You lose"}`}
                   </h2>
-
                   <p className="text-gray-600 mb-8">
                     {isDraw
                       ? "Great Game"
@@ -46,20 +81,28 @@ const WinModal = ({ props }) => {
                 </div>
               ) : (
                 <div>
-                  <div className="w-24 h-24 mx-auto  rounded-full flex items-center justify-center text-4xl">
-                    <img src="trophy.png" alt="" />
-                  </div>
+                  {isDraw ? (
+                    <div className="w-28 h-28 mx-auto rounded-full flex items-center justify-center">
+                      <img src="handshake.png" alt="Draw" />
+                    </div>
+                  ) : (
+                    <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center">
+                      <img src="trophy.png" alt="Win" />
+                    </div>
+                  )}
+
                   <h2 className="text-3xl font-bold text-gray-800 mb-2 mt-2">
                     {isDraw
                       ? "Draw!"
-                      : `${winner === "X" ? "Player 1 Win!" : "Player 2 Win!"}`}
+                      : `${
+                          winner === "X"
+                            ? player1Name + " win!"
+                            : player2Name + " win!"
+                        }`}
                   </h2>
-
                   <p className="text-gray-600 mb-8">
                     {isDraw
                       ? "Great game! You both played well."
-                      : winner === "X"
-                      ? "Congratulations"
                       : "Congratulations"}
                   </p>
                 </div>
