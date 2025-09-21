@@ -141,7 +141,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div>
+        <div className=" my-15 w-full ">
           <AdSenseAd height={250}/>
         </div>
 

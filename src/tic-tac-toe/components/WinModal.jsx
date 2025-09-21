@@ -40,7 +40,7 @@ const WinModal = ({ props }) => {
               : `${player2Name} जीत गया!`;
         }
         speak(message);
-      }, 1800);
+      }, 1900);
     }
   }, [showWinModal, isDraw, winner, gameMode, player1Name, player2Name]);
 

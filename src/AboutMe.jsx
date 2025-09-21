@@ -21,6 +21,7 @@ import {
   LightBulbIcon,
   ChartBarIcon,
 } from "@heroicons/react/24/outline";
+import AdSenseAd from "./Adsense";
 
 export default function AboutPage() {
   // Core features data
@@ -99,7 +100,7 @@ export default function AboutPage() {
     <>
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>About Us - Zenith Games</title>
+        <title>About Us - Zenith Webzone Games</title>
         <meta
           name="description"
           content="Learn more about Zenith Games, our mission, vision, and passion for creating fun and engaging online games. Discover who we are and why players love our platform."
@@ -211,7 +212,9 @@ export default function AboutPage() {
             </div>
 
             {/* Adsense */}
-            <div className=" my-20 w-full h-[260px] bg-blue-100"></div>
+            <div className=" my-20 w-full ">
+              <AdSenseAd height={260}/>
+            </div>
 
             {/* Core Features */}
             <section className="mb-12">
@@ -237,7 +240,9 @@ export default function AboutPage() {
             </section>
 
             {/* Adsense */}
-            <div className=" my-20 w-full h-[260px] bg-blue-100"></div>
+            <div className=" my-20 w-full">
+              <AdSenseAd height={260}/>
+            </div>
 
             {/* Story */}
             <section className="bg-white/80 backdrop-blur-sm p-6 rounded-md border border-gray-200 mb-12">

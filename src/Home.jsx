@@ -46,7 +46,7 @@ function Home() {
         />
       </Helmet>
 
-      <div className="mt-[60px] w-full pb-8 bg-gradient-to-b from-blue-50 to-indigo-50 min-h-screen">
+      <div className="mt-[60px] w-full pb-8  min-h-screen">
         {/* Hero Section */}
         <section className="w-full p-4 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 py-12 text-white">
           <div className="max-w-7xl mx-auto text-center">

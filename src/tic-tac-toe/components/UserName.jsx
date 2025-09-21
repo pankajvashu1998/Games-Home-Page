@@ -75,7 +75,7 @@ const UserName = ({
 
   return (
     <div className="w-full  bubbleBackground fixed top-0 left-0 ">
-      <div className="w-full pt-14 min-h-screen bg-indigo-900/90 flex justify-center items-center p-4">
+      <div className="w-full  min-h-screen bg-indigo-900/90 flex justify-center items-center p-4">
         <div
           className="w-full max-w-md bg-white mx-auto rounded-xl shadow-2xl  overflow-hidden 
       transform transition-all duration-300 hover:shadow-xl relative animate__animated animate__bounceIn"
@@ -89,7 +89,7 @@ const UserName = ({
           <div className="p-1 bg-gradient-to-r from-blue-500 to-purple-500">
             <div className="bg-white rounded-lg p-8">
               <div className="text-center mb-5">
-                <h1 className="text-xl font-bold text-gray-800 mb-2">
+                <h1 className="text-2xl font-bold text-gray-800 mb-2">
                   Enter Players' Names
                 </h1>
                 <p className="text-gray-600">Who's playing today?</p>
