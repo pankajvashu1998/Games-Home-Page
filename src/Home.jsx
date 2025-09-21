@@ -34,18 +34,6 @@ function Home() {
 
   return (
     <>
-      <Helmet>
-       
-        <meta
-          name="description"
-          content="Play free online games including board games, puzzles, strategy games and more. No downloads required. Fun for all ages!"
-        />
-        <meta
-          name="keywords"
-          content="free online games, board games, puzzle games, strategy games, family games, no download games"
-        />
-      </Helmet>
-
       <div className="mt-[60px] w-full pb-8  min-h-screen">
         {/* Hero Section */}
         <section className="w-full p-4 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 py-12 text-white">

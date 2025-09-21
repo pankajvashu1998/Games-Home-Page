@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <div className="bg-gray-50 text-gray-800 mt-[60px]">
       {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>Our Services - Zenith Games</title>
+        <title>Our Services - Zenith Webzone Games</title>
         <meta
           name="description"
           content="Explore our board gaming services and online tools that make gaming and productivity easier. Play, learn, and use digital solutions all in one place."

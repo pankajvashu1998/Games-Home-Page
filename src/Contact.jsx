@@ -29,7 +29,7 @@ const ContactPage = () => {
     <div className="bg-gray-50 min-h-screen mt-[55px]">
       {/* ✅ SEO Metadata */}
       <Helmet>
-        <title>Contact Us - Zenith Games</title>
+        <title>Contact Us - Zenith Webzone Games</title>
         <meta
           name="description"
           content="Reach out to Zenith Games for customer support, game feedback, partnership opportunities, or general inquiries. We're here to help you with all your gaming needs."
