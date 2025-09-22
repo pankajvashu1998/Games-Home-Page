@@ -12,6 +12,7 @@ import App from "./App.jsx";
 import AboutMe from "./AboutMe.jsx";
 import ServicesPage from "./Services.jsx";
 import ContactPage from "./Contact.jsx";
+import ChessGame from "./chess/components/ChessBoard.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App/>}>
           <Route path="/" element={<Home/>} />
           <Route path="/tic-tac-toe" element={<TicTacToeGame/>} />
+          <Route path="/chess" element={<ChessGame/>} />
         </Route>
 
         <Route path="/about" element = {<AboutMe/>}/>

@@ -8,6 +8,14 @@ export const gamesType = [
         url:"tic-tac-toe"
     },
 
+      {
+        id:2,
+        title:"Chess",
+        image:'/chessImage/chess.jpg',
+        description:"Play free online chess game with friends or computer. challenge opponents worldwide.",
+        url:"chess"
+    },
+
     
      
 ]

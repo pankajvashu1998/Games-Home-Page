@@ -190,9 +190,9 @@ const HomeScreen = ({ props }) => {
                             {diff}
                           </h3>
                           <p className="text-sm text-purple-700">
-                            {diff === "Easy"
+                            {diff === "easy"
                               ? "Computer makes random moves"
-                              : diff === "Medium"
+                              : diff === "medium"
                               ? "Computer plays strategically sometimes"
                               : "Computer never loses"}
                           </p>
