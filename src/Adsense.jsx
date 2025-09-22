@@ -9,7 +9,7 @@ export default function AdSenseAd({ height }) {
 
   return (
     <div
-      style={{ height }}
+      style={{ width: "100%", height: height }}
       className={`bg-gray-100  flex items-center justify-center my-6 w-full flex-col`}
     >
       <div className="text-center w-full rounded flex items-center justify-center">

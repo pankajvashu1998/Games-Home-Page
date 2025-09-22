@@ -12,6 +12,7 @@ import App from "./App.jsx";
 import AboutMe from "./AboutMe.jsx";
 import ServicesPage from "./Services.jsx";
 import ContactPage from "./Contact.jsx";
+import MemoryGame from "./memory-matching/components/MemoryMatching.jsx";
 
 
 createRoot(document.getElementById("root")).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App/>}>
           <Route path="/" element={<Home/>} />
           <Route path="/tic-tac-toe" element={<TicTacToeGame/>} />
+          <Route path="/memory_matching" element={<MemoryGame/>} />
           
         </Route>
 
