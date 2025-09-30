@@ -14,7 +14,6 @@ import {
   ArrowsRightLeftIcon,
   EyeIcon,
   LockClosedIcon,
-  UserGroupIcon,
   QuestionMarkCircleIcon,
   PlayIcon,
   EnvelopeIcon,

@@ -38,7 +38,7 @@ export default function TicTacToeFAQ() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-2xl ">
+    <section className="mx-auto w-full ">
       <header className="text-center py-6">
         <h1 className="text-2xl md:text-3xl font-bold text-slate-800">
          Frequently Asked Questions (FAQ)

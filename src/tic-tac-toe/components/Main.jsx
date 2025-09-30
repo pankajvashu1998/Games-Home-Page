@@ -10,7 +10,6 @@ import HomeScreen from "./HomeScreen";
 import WinModal from "./WinModal";
 import Setting from "./Setting";
 import WinLine from "./WinLine";
-import { Helmet } from "react-helmet";
 import UserName from "./UserName";
 
 export default function TicTacToeGame() {
@@ -19,28 +18,28 @@ export default function TicTacToeGame() {
 
   const playClickAudio = () => {
     if (!onSpeaker) {
-      const clickSound = new Audio("click.mp3");
+      const clickSound = new Audio("/click.mp3");
       clickSound.play();
     }
   };
 
   const playWinAudio = () => {
     if (!onSpeaker) {
-      const winSound = new Audio("win.mp3");
+      const winSound = new Audio("/winSound.mp3");
       winSound.play();
     }
   };
 
   const playLoseAudio = () => {
     if (!onSpeaker) {
-      const loseSound = new Audio("lose.mp3");
+      const loseSound = new Audio("/lose.mp3");
       loseSound.play();
     }
   };
 
   const playGameOverAudio = () => {
     if (!onSpeaker) {
-      const gameOverSound = new Audio("gameOver.mp3");
+      const gameOverSound = new Audio("/gameOver.mp3");
       gameOverSound.play();
     }
   };

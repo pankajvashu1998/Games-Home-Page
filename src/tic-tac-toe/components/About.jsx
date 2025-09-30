@@ -9,7 +9,7 @@ const About = () => {
         <div className="my-6"></div>
       </div>
       {/* About Tic Tac Toe */}
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800">
           About TIC TAC TOE Game
         </h1>
@@ -30,7 +30,7 @@ const About = () => {
       </div>
 
       {/* How to Play */}
-      <div className="max-w-5xl mx-auto py-12">
+      <div className="max-w-6xl mx-auto py-12">
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center pb-4">
           How to Play TIC TAC TOE
         </h1>
@@ -102,7 +102,7 @@ const About = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="max-w-3xl mx-auto py-12 px-2 sm:px-0">
+      <div className="max-w-6xl mx-auto py-12 px-2 sm:px-0">
         <TicTacToeFAQ />
       </div>
     </div>
