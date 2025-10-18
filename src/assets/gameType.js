@@ -16,6 +16,16 @@ export const gamesType = [
         url:"memory_matching"
     },
 
+     {
+        id:2,
+        title:"LUDO",
+        image:'/memory_match/mm.jpg',
+        description:"Play the Memory Match Game online! Boost your memory, sharpen focus, and improve concentration.",
+        url:"ludo"
+    },
+
+    
+
      
 
     

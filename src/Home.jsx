@@ -39,7 +39,7 @@ function Home() {
         <section className="w-full p-4 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 py-12 text-white">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-3xl sm:text-5xl font-bold mb-4">
-              All Your Favorite Games in One Place
+              All Your Favorite Games in One place
             </h1>
             <p className="text-lg sm:text-xl max-w-3xl mx-auto font-light">
               Play classic board games online or offline. Fun, simple, and

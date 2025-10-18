@@ -1,0 +1,14 @@
+
+/* Custom grid for board */
+.grid-cols-13 {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+
+.grid-rows-13 {
+  grid-template-rows: repeat(13, minmax(0, 1fr));
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
