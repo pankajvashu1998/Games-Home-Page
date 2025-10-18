@@ -9,30 +9,28 @@ jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Checkout repo
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Build React App
       - name: Build React App
         run: npm run build
 
-      # 5️⃣ Deploy to Hostinger via FTP
+      - name: List files after build
+        run: ls -la   # 👈 debug step
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 151.106.116.103
           username: u954995646
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/        # ⚡ trailing slash mandatory
-          server-dir: public_html/ # ⚡ trailing slash mandatory
+          local-dir: build/
+          server-dir: public_html/
